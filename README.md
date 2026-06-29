@@ -40,7 +40,7 @@ The scripts support two modes:
 ### Codex
 
 ```bash
-curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/install.sh | bash
 ```
 
 Default target:
@@ -52,7 +52,7 @@ Default target:
 ### Claude Code
 
 ```bash
-curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash -s claude
+curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/install.sh | bash -s claude
 ```
 
 Default target:
@@ -66,11 +66,11 @@ Default target:
 Pass the target skills root as the first argument.
 
 ```bash
-curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash -s codex /path/to/codex/skills
+curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/install.sh | bash -s codex /path/to/codex/skills
 ```
 
 ```bash
-curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash -s claude /path/to/claude/skills
+curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/install.sh | bash -s claude /path/to/claude/skills
 ```
 
 ## Local development install
@@ -91,7 +91,7 @@ After editing skills locally, rerun the relevant installer script.
 For regular users, rerun the one-line installer:
 
 ```bash
-curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/install.sh | bash
 ```
 
 For maintainers working from a clone:
@@ -115,7 +115,7 @@ The installers read these optional environment variables:
 Example:
 
 ```bash
-curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | CODING_AGENT_SKILLS_REF=dev bash
+curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/install.sh | CODING_AGENT_SKILLS_REF=dev bash
 ```
 
 ## Principles
