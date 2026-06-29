@@ -13,6 +13,7 @@ CodingAgent_Skills/
 ├── scripts/
 │   ├── install-codex.sh
 │   └── install-claude.sh
+├── install.sh
 └── README.md
 ```
 
@@ -20,9 +21,11 @@ CodingAgent_Skills/
 
 - `python-backend-architecture`: architecture-first and implementation-phase discipline for Python backend work.
 
-## What the scripts do
+## What the installer does
 
-The files in `scripts/` are installer scripts for different coding agents:
+`install.sh` is the main installer entrypoint.
+
+The files in `scripts/` are agent-specific installers used by `install.sh`:
 
 - `install-codex.sh` installs the skill into a Codex skills directory
 - `install-claude.sh` installs the skill into a Claude Code skills directory
@@ -37,7 +40,7 @@ The scripts support two modes:
 ### Codex
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/scripts/install-codex.sh | bash
+curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash
 ```
 
 Default target:
@@ -49,7 +52,7 @@ Default target:
 ### Claude Code
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/scripts/install-claude.sh | bash
+curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash -s claude
 ```
 
 Default target:
@@ -63,11 +66,11 @@ Default target:
 Pass the target skills root as the first argument.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/scripts/install-codex.sh | bash -s -- /path/to/codex/skills
+curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash -s codex /path/to/codex/skills
 ```
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/scripts/install-claude.sh | bash -s -- /path/to/claude/skills
+curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash -s claude /path/to/claude/skills
 ```
 
 ## Local development install
@@ -77,8 +80,8 @@ Clone the repository only if you want to maintain or edit the skills locally.
 ```bash
 git clone https://github.com/connar666666/CodingAgent_Skills.git
 cd CodingAgent_Skills
-bash scripts/install-codex.sh
-bash scripts/install-claude.sh
+bash install.sh
+bash install.sh claude
 ```
 
 After editing skills locally, rerun the relevant installer script.
@@ -88,15 +91,15 @@ After editing skills locally, rerun the relevant installer script.
 For regular users, rerun the one-line installer:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/scripts/install-codex.sh | bash
+curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | bash
 ```
 
 For maintainers working from a clone:
 
 ```bash
 git pull
-bash scripts/install-codex.sh
-bash scripts/install-claude.sh
+bash install.sh
+bash install.sh claude
 ```
 
 ## Installing a different branch or fork
@@ -112,7 +115,7 @@ The installers read these optional environment variables:
 Example:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/connar666666/CodingAgent_Skills/main/scripts/install-codex.sh | CODING_AGENT_SKILLS_REF=dev bash
+curl -fsSL https://github.com/connar666666/CodingAgent_Skills/raw/main/install.sh | CODING_AGENT_SKILLS_REF=dev bash
 ```
 
 ## Principles
